@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='file:/Users/msuarez/workspace/AnypointStudio.53/geo-location-connector/target/update-site/ - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1449096182221'/>
+    <property name='p2.compressed' value='false'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='2'>
+    <artifact classifier='osgi.bundle' id='org.mule.tooling.ui.contribution.geo-location.3.7.0' version='1.0.0.201512021942'>
+      <properties size='3'>
+        <property name='artifact.size' value='241241'/>
+        <property name='download.size' value='241241'/>
+        <property name='download.md5' value='b8044d72fb556e6d82bb40f7399485e6'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='org.mule.tooling.ui.extension.geo-location-connector.3.7.0' version='1.0.0.201512021942'>
+      <properties size='4'>
+        <property name='artifact.size' value='660'/>
+        <property name='download.size' value='660'/>
+        <property name='download.md5' value='2a3dbd3e2314a8e0626625775875bc74'/>
+        <property name='download.contentType' value='application/zip'/>
+      </properties>
+    </artifact>
+  </artifacts>
+</repository>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<namespace xmlns="http://www.mulesoft.org/schema/mule/tooling.attributes" xmlns:mule="http://www.mulesoft.org/schema/mule/core" url="http://www.mulesoft.org/schema/mule/geo-location" prefix="geo-location">
+  <global-cloud-connector versions="[3.7.0,8.0.0]" caption="GeoLocation" description="" icon="" localId="parentConfig" image="" abstract="true" extends="http://www.mulesoft.org/schema/mule/geo-location/abstractGeo-locationConnectorGeneric"></global-cloud-connector>
+  <global-cloud-connector versions="[3.7.0,8.0.0]" caption="GeoLocation: Configuration" description="Global Configuration configuration information." icon="icons/small/geo-location-connector-24x16.png" localId="config" image="icons/large/geo-location-connector-48x32.png" abstract="false" extends="http://www.mulesoft.org/schema/mule/geo-location/parentConfig" connectivityTesting="off" metaData="dynamic" metaDataKeyDisplay="DISPLAY_NAME" supportsUserDefinedMetaData="false">
+    <attribute-category caption="General" description="Geo-location configuration properties.">
+      <group id="geo-locationGenericProperties" caption="Basic Settings">
+        <name name="name" caption="Name" description="Give a name to this configuration so it can be later referenced by config-ref." required="true"></name>
+      </group>
+      <group id="general" caption="General">
+        <useMetaData name="useMetaData" caption="useMetaData"></useMetaData>
+      </group>
+    </attribute-category>
+  </global-cloud-connector>
+  <cloud-connector caption="Abstractgeo-locationconnectorgeneric" description="Interact with Geo-location." icon="icons/small/geo-location-connector-24x16.png" localId="abstractGeo-locationConnectorGeneric" image="icons/large/geo-location-connector-48x32.png" abstract="true">
+    <attribute-category caption="General" description="General.">
+      <group id="abstractGeo-locationConnectorGeneric" caption="Basic Settings">
+        <globalRef requiredType="http://www.mulesoft.org/schema/mule/geo-location/config" name="config-ref" caption="Connector Configuration" description="Specify which configuration to use for this invocation." required="true"></globalRef>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector versions="[3.7.0,8.0.0]" aliasId="org.mule.tooling.ui.modules.core.pattern.geo-location" caption="GeoLocation" description="" icon="icons/small/geo-location-connector-24x16.png" localId="geo-location-connector" image="icons/large/geo-location-connector-48x32.png" extends="http://www.mulesoft.org/schema/mule/geo-location/abstractGeo-locationConnectorGeneric">
+    <attribute-category caption="General" description="General.">
+      <group id="geo-locationConnectorGeneric" caption="Basic Settings">
+        <modeSwitch alwaysCombo="true" name="Geo-location operations to execute" caption="Operation" description="Operation.">
+          <mode modeId="http://www.mulesoft.org/schema/mule/geo-location/invoke" modeLabel="Invoke"></mode>
+        </modeSwitch>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+  <cloud-connector caption="Invoke" icon="icons/small/geo-location-connector-24x16.png" localId="invoke" image="icons/large/geo-location-connector-48x32.png" abstract="true" extends="http://www.mulesoft.org/schema/mule/geo-location/abstractGeo-locationConnectorGeneric" metaData="dynamic">
+    <attribute-category caption="General" description="General.">
+      <group id="general" caption="General">
+        <multi-type-chooser captions="Service,Operation" keySeparator="||" associatedConfig="config-ref" affects="BOTH" name="type" caption="Type" description="The representation of the WSDL file plus an operation." supportsExpressions="true" required="true" javaType="java.lang.String"></multi-type-chooser>
+      </group>
+    </attribute-category>
+  </cloud-connector>
+</namespace>

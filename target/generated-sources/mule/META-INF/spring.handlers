@@ -1,0 +1,1 @@
+http\://www.mulesoft.org/schema/mule/geo-location=org.mule.modules.geolocation.config.GeoLocationNamespaceHandler
